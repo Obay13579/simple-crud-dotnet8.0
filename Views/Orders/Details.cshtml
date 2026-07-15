@@ -1,0 +1,15 @@
+@model MigrationTestApp.Models.Order
+
+<h1>Order #@Model.Id</h1>
+<p>Customer: @Model.Customer?.Name</p>
+<p>Status: @Model.Status</p>
+<p>Total: @Model.TotalAmount</p>
+<p>Invoice Blob: @Model.StorageBlobRef</p>
+
+<h3>Items</h3>
+<ul>
+@foreach (var item in Model.OrderItems)
+{
+    <li>@item.Product?.Name — Qty @item.Quantity @@ @item.UnitPrice</li>
+}
+</ul>

@@ -1,0 +1,16 @@
+@model MigrationTestApp.Models.Order
+
+<h1>Edit Order #@Model.Id</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div>
+        <label>Status</label>
+        <select name="status">
+            <option value="Pending" selected="@(Model.Status == "Pending")">Pending</option>
+            <option value="Completed" selected="@(Model.Status == "Completed")">Completed</option>
+            <option value="Cancelled" selected="@(Model.Status == "Cancelled")">Cancelled</option>
+        </select>
+    </div>
+    <button type="submit">Save</button>
+</form>
