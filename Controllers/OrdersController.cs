@@ -52,7 +52,6 @@ namespace MigrationTestApp.Controllers
 
         // POST: Orders/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(
             long customerId,
             long productId,
