@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MigrationTestApp.Models
 {
+    [Table("customers")]
     public class Customer
     {
         public long Id { get; set; }
@@ -15,6 +17,7 @@ namespace MigrationTestApp.Models
         [StringLength(50)]
         public string Region { get; set; } = string.Empty;
 
+        [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
